@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import DisplayText from '../components/DisplayText';
 
 const DATA = [
     {
@@ -31,7 +32,10 @@ const HomeScreen = () => {
                             onPress={() => console.log('On Press')}
                             onLongPress={() => console.log('Long Press')}
                         >
-                            <Text style={styles.itemTitle}>{item.title}</Text>
+                            <View style={styles.itemContainer}>
+                                <DisplayText style={styles.itemTitle} title={item.id} />
+                                <DisplayText style={styles.itemTitle} title={item.title} />
+                            </View>
                         </TouchableOpacity>
                     </>
                 )}
@@ -49,6 +53,10 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10,
         marginTop: StatusBar.currentHeight! - 35 || 0,
+    },
+    itemContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     itemTouchable: {
         backgroundColor: '#3a86ff',
