@@ -39,7 +39,7 @@ const Navigator = () => {
             <Tab.Screen
                 options={{
                     tabBarLabel: 'Create',
-                    tabBarIcon: ({ color }) => (
+                    tabBarIcon: ({ color }) => ( 
                         <Icon
                             color={color}
                             size={30}
