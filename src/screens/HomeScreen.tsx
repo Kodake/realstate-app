@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StatusBar, StyleSheet, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import DisplayText from '../components/DisplayText';
 
@@ -29,8 +29,8 @@ const HomeScreen = () => {
                         <TouchableOpacity
                             style={styles.itemTouchable}
                             activeOpacity={0.65}
-                            onPress={() => console.log('On Press')}
-                            onLongPress={() => console.log('Long Press')}
+                            onPress={() => console.log(item.title, item.id)}
+                            onLongPress={() => console.log(item.title, item.id)}
                         >
                             <View style={styles.itemContainer}>
                                 <DisplayText style={styles.itemTitle} title={item.id} />
